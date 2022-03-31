@@ -76,14 +76,15 @@
     </main>
 
     <script>
-        var map = L.map('map').setView([51.505, -0.09], 13);
+        /*Link von Leaflet Startseite*/
+        var map = L.map('map').setView([-39.49, 176.90], 9);
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
 
-        L.marker([51.5, -0.09]).addTo(map)
-            .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+        L.marker([-39.49, 176.90]).addTo(map)
+            .bindPopup('<h3>Napier</h3>')
             .openPopup();
     </script>
 
