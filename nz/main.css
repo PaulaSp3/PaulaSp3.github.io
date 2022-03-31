@@ -10,7 +10,6 @@ body {
 
 header {
     text-align: center;
-    font-family: 'Montserrat', sans-serif;
 }
 
 img.banner {
@@ -27,6 +26,10 @@ main {
     max-width: 1024px;
     margin: auto;
     font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3{
+    font-family: 'Montserrat', sans-serif;
 }
 
 article {
