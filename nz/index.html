@@ -77,9 +77,10 @@
 
     <script>
         /*Link von Leaflet Startseite*/
-        var map = L.map('map').setView([-39.49, 176.90], 10);
+        /*L: Klasse Leaflet (map: methode)*/
+        var map = L.map('map'/*Referenz zu div id=map*/).setView([-39.49, 176.90], 10);
 
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { /*Dictionary*/
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
 
