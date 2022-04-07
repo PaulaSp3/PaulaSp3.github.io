@@ -52,10 +52,9 @@ for (let etappe of ETAPPEN){
         <li>geogr. Länge: ${etappe.lng}°</li>
         <li>geogr. Breite: ${etappe.lat}°</li>
         <li><a href = "${etappe.wikipedia}">Wikipedia-Link </a> </li>
-        <li><a href ="https://github.com/${etappe.github}">User </a> </li>
+        <li><a href ="https://${etappe.github}.github.io/nz/">Link zur Etappenseite </a> </li>
     </ul>
 `;
-
     //console.log(etappe);
     L.marker([etappe.lat, etappe.lng]).addTo(map).bindPopup(popup);
 }
