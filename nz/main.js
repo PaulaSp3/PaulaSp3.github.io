@@ -23,12 +23,12 @@ console.log(ETAPPEN[0].github);
 
 
 let popup = `
-    <h3> ${ETAPPEN[0].titel} </h3>
+    <h3> ${ETAPPEN[0].titel} (Etappe ${ETAPPEN[0].nr})</h3>
     <ul>
         <li>geogr. Länge: ${ETAPPEN[0].lng}°</li>
         <li>geogr. Breite: ${ETAPPEN[0].lat}°</li>
-        <li><a href = ${ETAPPEN[0].wikipedia}>Wikipedia </a> </li>
-        <li><a href = ${ETAPPEN[0].github}>User </a> </li>
+        <li><a href = "${ETAPPEN[0].wikipedia}">Wikipedia-Link </a> </li>
+        <li><a href ="https:/github/ +${ETAPPEN[0].github}">User </a> </li>
     </ul>
 `;
 
