@@ -29,7 +29,7 @@ let popup = `
         <li>geogr. Länge: ${ETAPPEN[0].lng}°</li>
         <li>geogr. Breite: ${ETAPPEN[0].lat}°</li>
         <li><a href = "${ETAPPEN[0].wikipedia}">Wikipedia-Link </a> </li>
-        <li><a href ="https://github.com/${ETAPPEN[0].github}">User </a> </li>
+        <li><a href ="https://${ETAPPEN[0].github}.github.io/nz/">Link zur Etappenseite </a> </li>
     </ul>
 `;
 
