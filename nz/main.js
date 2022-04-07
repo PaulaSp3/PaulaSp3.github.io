@@ -10,6 +10,7 @@ let zoom = 10;
 // array: []
 let coords = [-39.49, 176.90];
 
+/*
 // In Konsole anzeigen: in Webseite F12
 console.log(coords[0]);
 console.log(coords.length);
@@ -19,7 +20,7 @@ console.log(ETAPPEN);
 console.log(ETAPPEN[0])
 console.log(ETAPPEN[0].titel);
 console.log(ETAPPEN[0].github);
-
+*/
 
 
 let popup = `
@@ -42,3 +43,8 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 L.marker(coords).addTo(map)
     .bindPopup(popup)
     .openPopup();
+
+for (let etappe of ETAPPEN){
+    //console.log(etappe);
+    L.marker([etappe.lat, etappe.lng]).addTo(map);
+}
