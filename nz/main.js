@@ -13,6 +13,7 @@ console.log(coords[0]);
 console.log(coords.length);
 console.log('text');
 console.log(`latitude = ${lat}`);
+console.log(ETAPPEN);
 
 let popup = `
     <h3> Napier </h3>
