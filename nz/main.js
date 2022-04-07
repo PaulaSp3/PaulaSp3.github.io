@@ -45,6 +45,17 @@ L.marker(coords).addTo(map)
     .openPopup();
 
 for (let etappe of ETAPPEN){
+
+    let popup = `
+    <h3> ${etappe.titel} (Etappe ${etappe.nr})</h3>
+    <ul>
+        <li>geogr. Länge: ${etappe.lng}°</li>
+        <li>geogr. Breite: ${etappe.lat}°</li>
+        <li><a href = "${etappe.wikipedia}">Wikipedia-Link </a> </li>
+        <li><a href ="https://github.com/${etappe.github}">User </a> </li>
+    </ul>
+`;
+
     //console.log(etappe);
-    L.marker([etappe.lat, etappe.lng]).addTo(map);
+    L.marker([etappe.lat, etappe.lng]).addTo(map).bindPopup(popup);
 }
