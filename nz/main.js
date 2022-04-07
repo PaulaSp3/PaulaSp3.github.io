@@ -9,17 +9,26 @@ let zoom = 10;
 
 // array: []
 let coords = [-39.49, 176.90];
+
+// In Konsole anzeigen: in Webseite F12
 console.log(coords[0]);
 console.log(coords.length);
 console.log('text');
 console.log(`latitude = ${lat}`);
 console.log(ETAPPEN);
+console.log(ETAPPEN[0])
+console.log(ETAPPEN[0].titel);
+console.log(ETAPPEN[0].github);
+
+
 
 let popup = `
-    <h3> Napier </h3>
+    <h3> ${ETAPPEN[0].titel} </h3>
     <ul>
-        <li>geogr. Länge: ${lng}°</li>
-        <li>geogr. Breite: ${lat}°</li>
+        <li>geogr. Länge: ${ETAPPEN[0].lng}°</li>
+        <li>geogr. Breite: ${ETAPPEN[0].lat}°</li>
+        <li><a href = ${ETAPPEN[0].wikipedia}>Wikipedia </a> </li>
+        <li><a href = ${ETAPPEN[0].github}>User </a> </li>
     </ul>
 `;
 
