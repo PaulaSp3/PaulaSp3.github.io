@@ -44,6 +44,7 @@ L.marker(coords).addTo(map)
     .bindPopup(popup)
     .openPopup();
 
+// Alle Etappenziele anzeigen
 for (let etappe of ETAPPEN){
 
     let popup = `
@@ -57,4 +58,10 @@ for (let etappe of ETAPPEN){
 `;
     //console.log(etappe);
     L.marker([etappe.lat, etappe.lng]).addTo(map).bindPopup(popup);
+}
+
+//Hütten anzeigen
+for (let hut of HUTS) 
+{
+L.marker([hut.lat, hut.lng]).addTo(map);
 }
