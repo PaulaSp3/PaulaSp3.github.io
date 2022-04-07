@@ -60,7 +60,7 @@ for (let etappe of ETAPPEN){
     L.marker([etappe.lat, etappe.lng]).addTo(map).bindPopup(popup);
 
     //Etappennavigation erweitern
-    let link = `<a href = "https://${etappe.github}.github.io/nz/" class="etappenLink">${etappe.nr}</a>`;
+    let link = `<a href = "https://${etappe.github}.github.io/nz/" class="etappenLink" title="${etappe.titel}">${etappe.nr}</a>`;
     //Verbindung zur id nav_etappe (in html-Seite)
     document.querySelector("#nav_etappe").innerHTML += link
 }
