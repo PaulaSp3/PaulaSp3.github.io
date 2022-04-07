@@ -64,7 +64,7 @@ for (let etappe of ETAPPEN){
 for (let hut of HUTS) 
 {
 let popup = `
-    <h3> ${hut.name}</h3>
+    <h3>${hut.name}</h3>
     `;    
-L.circleMarker([hut.lat, hut.lng]).addTo(map)//.bindPopup(popup);
+L.circleMarker([hut.lat, hut.lng]).addTo(map).bindPopup(popup);
 }
