@@ -3,12 +3,17 @@
 
 /*Link von Leaflet Startseite*/
 /*L: Klasse Leaflet (map: methode)*/
-let lat = -39.49
-let lng = 176.90
-let zoom = 10
+let lat = -39.49;
+let lng = 176.90;
+let zoom = 10;
 
 // array: []
-let coords = [-39.49, 176.90]
+let coords = [-39.49, 176.90];
+console.log(coords[0]);
+console.log(coords.length);
+console.log('text');
+console.log(`latitude = ${lat}`);
+
 let map = L.map('map' /*Referenz zu div id=map*/ ).setView(coords, zoom);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
