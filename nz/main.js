@@ -14,6 +14,14 @@ console.log(coords.length);
 console.log('text');
 console.log(`latitude = ${lat}`);
 
+let popup = `
+    <h3> Napier </h3>
+    <ul>
+        <li>geogr. Länge: ${lng}°</li>
+        <li>geogr. Breite: ${lat}°</li>
+    </ul>
+`;
+
 let map = L.map('map' /*Referenz zu div id=map*/ ).setView(coords, zoom);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -22,5 +30,5 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 L.marker(coords).addTo(map)
-    .bindPopup('<h3>Napier</h3>')
+    .bindPopup(popup)
     .openPopup();
