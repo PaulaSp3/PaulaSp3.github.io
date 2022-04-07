@@ -58,6 +58,11 @@ for (let etappe of ETAPPEN){
 `;
     //console.log(etappe);
     L.marker([etappe.lat, etappe.lng]).addTo(map).bindPopup(popup);
+
+    //Etappennavigation erweitern
+    let link = `<a href = "https://${etappe.github}.github.io/nz/">${etappe.nr} </a>`;
+    //Verbindung zur id nav_etappe (in html-Seite)
+    document.querySelector("#nav_etappe").innerHTML += link
 }
 
 //Hütten anzeigen
@@ -74,3 +79,5 @@ let popup = `
     `;    
 L.circleMarker([hut.lat, hut.lng]).addTo(map).bindPopup(popup);
 }
+
+
