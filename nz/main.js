@@ -65,6 +65,10 @@ for (let hut of HUTS)
 {
 let popup = `
     <h3>${hut.name}</h3>
+    <h4>${hut.region}</h4>
+    <hr> 
+    <p>${hut.info}</p>
+    <img src = "${hut.image}" alt = "Bild der Hütte">
     `;    
 L.circleMarker([hut.lat, hut.lng]).addTo(map).bindPopup(popup);
 }
