@@ -69,6 +69,8 @@ let popup = `
     <hr> 
     <p>${hut.info}</p>
     <img src = "${hut.image}" alt = "Bild der Hütte">
+    <hr>
+    <a href= "${hut.link}" target="Neuseeland">Link zur Hütte</a>
     `;    
 L.circleMarker([hut.lat, hut.lng]).addTo(map).bindPopup(popup);
 }
