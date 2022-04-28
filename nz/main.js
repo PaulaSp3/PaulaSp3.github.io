@@ -58,6 +58,9 @@ for (let etappe of ETAPPEN) {
 }
 
 //Hütten anzeigen
+
+//auf Variablen zugreifen mit ${} wenn man innerhal <> ist
+
 for (let hut of HUTS) {
     let popup = `
     <h3>${hut.name}</h3>
@@ -68,5 +71,11 @@ for (let hut of HUTS) {
     <hr>
     <a href= "${hut.link}" target="Neuseeland">Link zur Hütte</a>
     `;
-    L.circleMarker([hut.lat, hut.lng]).addTo(map).bindPopup(popup);
+    let statusColor;
+    if (hut.open == true) {statusColor = "green";        
+    } else{
+        statusColor = "red";
+    }
+
+    L.circleMarker([hut.lat, hut.lng], {color: statusColor}).addTo(map).bindPopup(popup);
 }
