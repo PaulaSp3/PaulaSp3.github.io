@@ -43,14 +43,16 @@ for (let etappe of ETAPPEN) {
     </ul>
 `;
     //console.log(etappe);
+    let navClass = "etappenLink"
     let mrk = L.marker([etappe.lat, etappe.lng]).addTo(map).bindPopup(popup);
 
     if(etappe.nr == 13){
         mrk.openPopup();
+        navClass = "etappenLink etappeAktuell"
     }
 
     //Etappennavigation erweitern
-    let link = `<a href = "https://${etappe.github}.github.io/nz/" class="etappenLink" title="${etappe.titel}">${etappe.nr}</a>`;
+    let link = `<a href = "https://${etappe.github}.github.io/nz/" class="${navClass}" title="${etappe.titel}">${etappe.nr}</a>`;
     //Verbindung zur id nav_etappe (in html-Seite)
     document.querySelector("#nav_etappe").innerHTML += link
 }
