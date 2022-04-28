@@ -3,12 +3,11 @@
 
 /*Link von Leaflet Startseite*/
 /*L: Klasse Leaflet (map: methode)*/
-let lat = -39.49;
-let lng = 176.90;
+
 let zoom = 10;
 
 // array: []
-let coords = [-39.49, 176.90];
+let coords = [ETAPPEN[12].lat,ETAPPEN[12].lng];
 
 /*
 // In Konsole anzeigen: in Webseite F12
@@ -23,16 +22,6 @@ console.log(ETAPPEN[0].github);
 */
 
 
-let popup = `
-    <h3> ${ETAPPEN[0].titel} (Etappe ${ETAPPEN[0].nr})</h3>
-    <ul>
-        <li>geogr. Länge: ${ETAPPEN[0].lng}°</li>
-        <li>geogr. Breite: ${ETAPPEN[0].lat}°</li>
-        <li><a href = "${ETAPPEN[0].wikipedia}">Wikipedia-Link </a> </li>
-        <li><a href ="https://${ETAPPEN[0].github}.github.io/nz/">Link zur Etappenseite </a> </li>
-    </ul>
-`;
-
 let map = L.map('map' /*Referenz zu div id=map*/ ).setView(coords, zoom);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -40,9 +29,6 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
-L.marker(coords).addTo(map)
-    .bindPopup(popup)
-    .openPopup();
 
 // Alle Etappenziele anzeigen
 for (let etappe of ETAPPEN) {
@@ -57,7 +43,11 @@ for (let etappe of ETAPPEN) {
     </ul>
 `;
     //console.log(etappe);
-    L.marker([etappe.lat, etappe.lng]).addTo(map).bindPopup(popup);
+    let mrk = L.marker([etappe.lat, etappe.lng]).addTo(map).bindPopup(popup);
+
+    if(etappe.nr == 13){
+        mrk.openPopup();
+    }
 
     //Etappennavigation erweitern
     let link = `<a href = "https://${etappe.github}.github.io/nz/" class="etappenLink" title="${etappe.titel}">${etappe.nr}</a>`;
