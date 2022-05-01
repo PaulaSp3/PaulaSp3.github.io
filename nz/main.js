@@ -51,6 +51,15 @@ L.control.scale({
     imperial : false,
 }).addTo(map);
 
+//Fullscreen
+L.control.fullscreen().addTo(map);
+
+//Minimap
+let miniMap = new L.Control.MiniMap(
+    L.tileLayer.provider("BasemapAT"),
+    {"toggleDisplay" : "True"}
+).addTo(map);
+
 
 // Alle Etappenziele anzeigen
 for (let etappe of ETAPPEN) {
