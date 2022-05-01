@@ -56,7 +56,7 @@ L.control.fullscreen().addTo(map);
 
 //Minimap
 let miniMap = new L.Control.MiniMap(
-    L.tileLayer.provider("BasemapAT"),
+    L.tileLayer.provider("OpenStreetMap"),
     {"toggleDisplay" : "True"}
 ).addTo(map);
 
