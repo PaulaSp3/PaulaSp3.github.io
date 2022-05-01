@@ -21,13 +21,30 @@ console.log(ETAPPEN[0].titel);
 console.log(ETAPPEN[0].github);
 */
 
-
-let map = L.map('map' /*Referenz zu div id=map*/ ).setView(coords, zoom);
+let startLayer = L.tileLayer.provider('OpenStreetMap.DE');
+let map = L.map('map' /*Referenz zu div id=map*/, {layers : [
+    startLayer
+],}).setView(coords, zoom);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     /*Dictionary*/
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
+
+
+/// Layer Control
+let layerControl = L.control.layers({
+    "OpenStreetMap" : startLayer,
+    "OpenTopoMap" : L.tileLayer.provider('OpenTopoMap'),
+    "Stamen Terrain" : L.tileLayer.provider('Stamen.Terrain'),
+    "ESRI Image" : L.tileLayer.provider('Esri.WorldImagery'),
+    "ESRI DeLorme" : L.tileLayer.provider('Esri.DeLorme'),
+    "ESI IMmagery mit Beschriftung" : L.layerGroup([
+        L.tileLayer.provider('Esri.WorldImagery'),
+        L.tileLayer.provider('CartoDB.VoyagerOnlyLabels')])
+}).addTo(map)
+
+layerControl.expand();
 
 //Massstab
 L.control.scale({
